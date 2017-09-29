@@ -1,2 +1,4 @@
 .*.sw*
 *.log
+config/local.json
+node_modules

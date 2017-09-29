@@ -6,27 +6,19 @@ Vagrant.configure(2) do |config|
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
   config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update
-    sudo apt-get install -y git unzip wget curl
-    COMPOSE_VERSION=1.9.0
-
-    echo Installing Docker ...
-    sudo wget -qO- https://get.docker.com/ | sudo sh && sudo usermod -aG docker vagrant
-
-    echo Installing Docker Compose
-    sudo su -
-    curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-    chmod +x /usr/local/bin/docker-compose
+    apt-get install software-properties-common
+    add-apt-repository -y ppa:ethereum/ethereum
+    apt-get update
+    apt-get install -y git unzip wget curl ethereum
 
     echo Installing NodeJS 8x ...
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     apt-get install -y nodejs
     npm install -g npm@latest
     npm install -g nodemon
-
+    npm install -g solc
   SHELL
 
-  config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provider "virtualbox" do |vb|
