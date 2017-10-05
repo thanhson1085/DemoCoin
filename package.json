@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/thanhson1085/DemoCoin#readme",
   "dependencies": {
-    "config": "^1.26.2"
+    "config": "^1.26.2",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^1.0.0-beta.22"
   }
 }

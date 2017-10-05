@@ -1,8 +1,14 @@
 {
   "networks": {
-    "host": "localhost",
-    "port": 8545,
-    "network_id": "*" // Match any network id
+    "development": {
+      "host": "localhost",
+      "port": 8545,
+      "network_id": "*" // Match any network id
+    },
+    "ropsten": {
+      "infuraUrl": "https://ropsten.infura.io/xxx",
+      "mnemonic": "xxx"
+    }
   },
   "contracts": {
     "ethFundDeposit": "0x62b5c395fa2048c30ac21485dff7a3863e36b1fb",
