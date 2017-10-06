@@ -8,6 +8,10 @@
     "ropsten": {
       "infuraUrl": "https://ropsten.infura.io/xxx",
       "mnemonic": "xxx"
+    },
+    "live": {
+      "infuraUrl": "https://ropsten.infura.io/xxx",
+      "mnemonic": "xxx"
     }
   },
   "contracts": {

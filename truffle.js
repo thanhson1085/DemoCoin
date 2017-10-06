@@ -12,6 +12,10 @@ module.exports = {
     ropsten: {
       network_id: 3,
       provider: new HDWalletProvider(mnemonic, config.get('networks.ropsten.infuraUrl'))
+    },
+    live: {
+      network_id: 1,
+      provider: new HDWalletProvider(mnemonic, config.get('networks.live.infuraUrl'))
     }
   }
 };
