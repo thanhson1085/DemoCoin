@@ -61,10 +61,14 @@ apt-get install git
 
 To confirm all installation is OK, we use command:
 ```
+# Node
 node --version
+# NPM
 npm --version
+# Git
 git --version
-geth --version
+# Geth
+geth version
 ```
 
 ## Setup the project
@@ -117,17 +121,16 @@ Check account balance
 ```
 
 Unlock an account:
+```
 > personal.unlockAccount(eth.accounts[0], '123456', 0)
-
-
-
-```
-geth --dev --datadir ~/ethnode --rpc --rpcaddr 0.0.0.0 --rpcport 8545 --etherbase 0x525f77b36333c42d02498e856cf8fdf9c05eec04 --unlock 0x525f77b36333c42d02498e856cf8fdf9c05eec04 --password <(echo -n 123456) --mine
 ```
 
-### Init the project
+
+### Run the project
+
+### Compiling the source code
 ```
-truffle init
+truffle compile
 ```
 
 ### Test
@@ -139,4 +142,5 @@ truffle test
 ```
 truffle deploy --reset
 ```
+
 **TO BE UPDATED**
