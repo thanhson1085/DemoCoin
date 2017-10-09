@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
     npm install -g npm@latest
     npm install -g nodemon
     npm install -g solc
+    npm install -g truffle
   SHELL
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
