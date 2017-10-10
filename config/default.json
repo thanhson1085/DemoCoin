@@ -15,12 +15,12 @@
     }
   },
   "contracts": {
-    "ethFundDeposit": "0x62b5c395fa2048c30ac21485dff7a3863e36b1fb",
+    "ethFundDeposit": "0xc3d2a1629d3990d8b9d9799c8675ec18c6f00247",
+    "tokenCreationCap": 100000000000000000000000000,
+    "tokenExchangeRate": 1000,
     "fundingStartTime": 1504051200,
-    "fundingEndTime": 1506729600,
-    "minContribution": "0.05", // ether
-    "maxGasPrice": "50000000000", // wei
-    "maxTokens": 1000000000000000000000000
+    "fundingEndTime": 1514592000,
+    "minContribution": "0.05" // ether
   },
   "tokens": {
     "name": "Test Token",

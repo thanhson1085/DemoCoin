@@ -1,5 +1,6 @@
 const IcoToken = artifacts.require('IcoToken');
 const IcoContract = artifacts.require('IcoContract');
+const DestroyIco = artifacts.require('DestroyIco');
 const config = require('config');
 const Web3 = require('web3');
 
@@ -15,14 +16,14 @@ module.exports = function(deployer) {
       IcoContract,
       config.get('contracts.ethFundDeposit'),
       IcoToken.address,
+      config.get('contracts.tokenCreationCap'),
+      config.get('contracts.tokenExchangeRate'),
       config.get('contracts.fundingStartTime'),
       config.get('contracts.fundingEndTime'),
-      Web3.utils.toWei(config.get('contracts.minContribution'), 'ether'),
-      config.get('contracts.maxGasPrice'),
-      config.get('contracts.maxTokens')
+      Web3.utils.toWei(config.get('contracts.minContribution'), 'ether')
     ).then(() => {
-      IcoToken.deployed().then(function(instance) {
-        instance.setIcoContract(IcoContract.address);
+      return IcoToken.deployed().then(function(instance) {
+        return instance.setIcoContract(IcoContract.address);
       });
     });
   });

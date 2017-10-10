@@ -173,9 +173,6 @@ contract IcoToken is SafeMath, StandardToken, Pausable {
   address public icoSaleDeposit;
   address public icoContract;
 
-  uint256 public icoSale;
-
-
   function IcoToken(
     string _name,
     string _symbol,
@@ -201,12 +198,34 @@ contract IcoToken is SafeMath, StandardToken, Pausable {
     return super.balanceOf(_owner);
   }
 
+  function setIcoContract(address _icoContract) onlyOwner {
+    if (_icoContract != address(0)) {
+      icoContract = _icoContract;
+    }
+  }
+
+  function sell(address _recipient, uint256 _value) whenNotPaused returns (bool success) {
+      assert(_value > 0);
+      require(msg.sender == icoContract);
+
+      balances[_recipient] += _value;
+      totalSupply += _value;
+
+      Transfer(0x0, owner, _value);
+      Transfer(owner, _recipient, _value);
+      return true;
+  }
+
 }
+
 // ================= Ico Token Contract end =======================
 
 // ================= Actual Sale Contract Start ====================
 contract IcoContract is SafeMath, Pausable {
   IcoToken public ico;
+
+  uint256 public tokenCreationCap;
+  uint256 public totalSupply;
 
   address public ethFundDeposit;
   address public icoAddress;
@@ -214,37 +233,35 @@ contract IcoContract is SafeMath, Pausable {
   uint256 public fundingStartTime;
   uint256 public fundingEndTime;
   uint256 public minContribution;
-  uint256 public maxGasPrice;
-  uint256 public maxTokens;
 
   bool public isFinalized;
-  uint256 public constant tokenExchangeRate = 1000;
+  uint256 public tokenExchangeRate;
 
   event LogCreateICO(address from, address to, uint256 val);
 
   function CreateICO(address to, uint256 val) internal returns (bool success) {
     LogCreateICO(0x0, to, val);
-    return true;
+    return ico.sell(to, val);
   }
 
   function IcoContract(
     address _ethFundDeposit,
     address _icoAddress,
+    uint256 _tokenCreationCap,
+    uint256 _tokenExchangeRate,
     uint256 _fundingStartTime,
     uint256 _fundingEndTime,
-    uint256 _minContribution,
-    uint256 _maxGasPrice,
-    uint256 _maxTokens
+    uint256 _minContribution
   )
   {
     ethFundDeposit = _ethFundDeposit;
     icoAddress = _icoAddress;
+    tokenCreationCap = _tokenCreationCap;
+    tokenExchangeRate = _tokenExchangeRate;
     fundingStartTime = _fundingStartTime;
     minContribution = _minContribution;
     fundingEndTime = _fundingEndTime;
-    maxGasPrice = _maxGasPrice;
     ico = IcoToken(icoAddress);
-    maxTokens = _maxTokens;
     isFinalized = false;
   }
 
@@ -254,15 +271,28 @@ contract IcoContract is SafeMath, Pausable {
 
   /// @dev Accepts ether and creates new ICO tokens.
   function createTokens(address _beneficiary, uint256 _value) internal whenNotPaused {
+    require (tokenCreationCap > totalSupply);
     require (now >= fundingStartTime);
     require (now <= fundingEndTime);
     require (_value >= minContribution);
     require (!isFinalized);
-    require (tx.gasprice <= maxGasPrice);
 
     uint256 tokens = safeMult(_value, tokenExchangeRate);
+    uint256 checkedSupply = safeAdd(totalSupply, tokens);
 
-    require (ico.balanceOf(msg.sender) + tokens <= maxTokens);
+    if (tokenCreationCap < checkedSupply) {        
+      uint256 tokensToAllocate = safeSubtract(tokenCreationCap, totalSupply);
+      uint256 tokensToRefund   = safeSubtract(tokens, tokensToAllocate);
+      totalSupply = tokenCreationCap;
+      uint256 etherToRefund = tokensToRefund / tokenExchangeRate;
+
+      require(CreateICO(_beneficiary, tokensToAllocate));
+      msg.sender.transfer(etherToRefund);
+      ethFundDeposit.transfer(this.balance);
+      return;
+    }
+
+    totalSupply = checkedSupply;
 
     require(CreateICO(_beneficiary, tokens)); 
     ethFundDeposit.transfer(this.balance);
