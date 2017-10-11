@@ -1,3 +1,4 @@
 site_name: Demo Coin
 pages:
-    - Home: index.md
+    - Home: README.md
+    - Installations: README.md
