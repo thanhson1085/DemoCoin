@@ -1,3 +1,4 @@
+Before starting the project, we have to prepare platforms and dependencies. In this case, we have to have NodeJs and Geth.
 ## Prerequisites
 - NodeJS 8+
 - Geth
@@ -55,7 +56,6 @@ Install Git:
 ```
 apt-get install git
 ```
-
 
 To confirm all installation is OK, we use command:
 ```

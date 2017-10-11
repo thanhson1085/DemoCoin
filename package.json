@@ -1,7 +1,7 @@
 {
   "name": "democoin",
   "version": "1.0.0",
-  "description": "**TO BE UPDATED**",
+  "description": "this project is for workshop"
   "main": "index.js",
   "directories": {
     "doc": "docs",

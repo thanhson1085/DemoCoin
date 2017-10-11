@@ -1,22 +1,15 @@
 ## Setup the project
-Install Solc:
+As you know, Ethereum Smart Contract use Solidity programing language. So we have to intall the compiler called `Solc`.
+
+Open your terminal, and install Solc via NPM:
 ```
 npm install -g solc
 ```
-Install Truffle
+
+We use `truffle` to build/deploy the project. So we Install Truffle via NPM:
 ```
 npm install -g truffle
 ```
-Clone source code:
-```
-git clone git@github.com:thanhson1085/DemoCoin.git
-```
-Install Node Modules:
-```
-cd DemoCoin
-npm install
-```
-
 ### Start a Ethereum Node
 Open a terminal and run the command to start a Ethereum node:
 ```

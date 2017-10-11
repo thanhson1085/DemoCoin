@@ -1,5 +1,5 @@
-## Explaining ERC20 ICO Smart Contract
-To start writing Smart Contract, we have to init the project with Truffle:
+## ERC20 ICO Smart Contract
+In this project, we use Truffle to compile and deploy smart contract, so to start writing Smart Contract, we have to init the project with Truffle:
 ```
 truffle init
 ```
@@ -14,7 +14,6 @@ Truffle will create some files and directories as the below:
 │   └── 2_deploy_contracts.js
 ├── package.json
 ├── README.md
-├── run.sh
 ├── test
 │   ├── metacoin.js
 │   └── TestMetacoin.sol
@@ -22,7 +21,10 @@ Truffle will create some files and directories as the below:
 
 ```
 
-Now, it is ready to write your own smart contract. We can remove the sample file `Metacoin.sol` and create a new `.sol` file in `contracts` directory.
+Now, it is ready to write your own smart contract. We can remove the sample file `Metacoin.sol` and create a new `.sol` (IcoContract.sol) file in `contracts` directory. After that, you copy source code from [this link](https://github.com/thanhson1085/DemoCoin/blob/master/contracts/IcoContract.sol), and paste to your new contract file.
+
+In the contract, there are some main points need to explain as the below:
+
 For ICO, we should create a ERC20 Token. The below is an example for Standard ERC20 Token:
 ```
 // ================= ERC20 Token Contract start =========================
@@ -154,7 +156,9 @@ contract IcoToken is SafeMath, StandardToken, Pausable {
 
 ```
 
-Finally, create your Token Sale Contract.
+This contract will be store all balances of users who buy the token. We should define the important parameters of ERC20 Token as `name`, `symbol`, `decimals`.
+
+Finally, we have to create the Token Sale Contract.
 
 ```
 contract IcoContract is SafeMath, Pausable {
@@ -244,5 +248,7 @@ contract IcoContract is SafeMath, Pausable {
 }
 
 ```
+
+Inverstor will tranfer ETH to this contract address to buy the token. So we can see a fallback function `payable`. This function will be called once the contract receive Ether.
 
 
