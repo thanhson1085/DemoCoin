@@ -1,4 +1,7 @@
 site_name: Demo Coin
 pages:
-    - Home: README.md
-    - Installations: installations.md
+    - Home: index.md
+    - Prerequisites: prerequisites.md
+    - Setup the project: setup_project.md
+    - ERC20 Token: erc20_token.md
+    - Run the project: run_project.md
