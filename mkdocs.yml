@@ -1,6 +1,6 @@
 site_name: Demo Coin
 pages:
-    - Home: index.md
+    - Introductions: index.md
     - Prerequisites: prerequisites.md
     - Setup the project: setup_project.md
     - ERC20 Token: erc20_token.md

@@ -6,10 +6,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get install software-properties-common && \
-      add-apt-repository -y ppa:ethereum/ethereum && \
-        apt-get update && \
-        apt-get install -y git unzip wget curl ethereum
+    apt-get update && \
+    apt-get install -y git unzip wget curl ethereum
 
     echo Installing NodeJS 8x ...
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -17,6 +15,7 @@ Vagrant.configure(2) do |config|
     npm install -g npm@latest
     npm install -g nodemon
     npm install -g solc
+    npm install -g ethereumjs-testrpc
     npm install -g truffle
   SHELL
 
@@ -32,5 +31,6 @@ Vagrant.configure(2) do |config|
     n1.vm.hostname = "dev"
     # port user service
     n1.vm.network "forwarded_port", guest: 3000, host: 3000
+    n1.vm.network "forwarded_port", guest: 8545, host: 8545
   end
 end
