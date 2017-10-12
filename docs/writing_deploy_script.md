@@ -2,32 +2,43 @@ After finishing the ICO Smart contract. We need deploy and test it.
 
 Truffle support we define the scenario of the deployment in `.js` file in `migrations` directory.
 
-Before writing the deploy script, we need to install some node packages that we will use in the script.
+## Writing the script
+We start writing the delopy script. Open your IDE, create/update `2_deploy.contracts.js` in `migrations` directory and copy source code as the below:
 ```
-# init packages.json file
-npm init
+const IcoToken = artifacts.require('IcoToken');
+const IcoContract = artifacts.require('IcoContract');
 
-# install config package
-npm install --save config
+module.exports = function(deployer) {
+  deployer.deploy(
+    IcoToken,
+    'Test Token',
+    'TST',
+    '18',
+    '1.0'
+  ).then(() => {
+    return deployer.deploy(
+      IcoContract,
+      '0xc3d2a1629d3990d8b9d9799c8675ec18c6f00247', // Your ETH Address
+      IcoToken.address,
+      '100000000000000000000000000', // 100000000 Token
+      '1000', // 1 ETH = 1000 Token
+      '1504051200', // 30/08/2017
+      '1514592000', // 30/12/2017
+      '100000000000000000' // 0.1 ETH
+    ).then(() => {
+      return IcoToken.deployed().then(function(instance) {
+        return instance.setIcoContract(IcoContract.address);
+      });
+    });
+  });
+};
 
-# install web3 package
-npm install --save web3
 ```
 
-Now, we start writing the delopy script. Open your IDE, create/update `2_deploy.contracts.js` in `migrations` directory and copy source code form [this link](https://github.com/thanhson1085/DemoCoin/blob/master/migrations/2_deploy_contracts.js) to the file.
+Note: you should change parameter `Your ETH Address`
 
-After that, we create the config file that contains the parameters of the contracts.
-
-```
-# create config directory
-mkdir config && cd config
-```
-
-In `config` directory, we create `default.json` file, and paste the content from [this link](https://github.com/thanhson1085/DemoCoin/blob/master/config/default.json)
-
-To understand about `node-config`, you can read their document in github [https://github.com/lorenwest/node-config](https://github.com/lorenwest/node-config)
-
-Now, we run the deploy command from the terminal
+## Deploy the contracts
+After that, return root directory and  run the deploy command from the terminal
 ```
 truffle deploy --reset
 ```

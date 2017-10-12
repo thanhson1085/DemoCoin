@@ -1,12 +1,16 @@
 Before starting the project, we have to prepare platforms and dependencies. In this case, we have to have NodeJs and Geth.
+
 ## Prerequisites
+- MetaMask (Chrome Extension)
 - NodeJS 8+
 - Geth
 - Git
 - IDE (Sublime, Visual Studio, Vim ...)
 
-## Setup Development Enviroment
-### Windows
+## Installing MetaMask Extension
+Just open your Chrome Browser (Install it if you do not have) and go to link: [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
+
+## Windows
 We use Chocolaty to install NodeJS and Geth. For installing Choco, please see: [https://chocolatey.org/install#install-with-cmdexe](https://chocolatey.org/install#install-with-cmdexe)
 
 Install NodeJs:
@@ -22,7 +26,7 @@ Install Git
 choco install git
 ```
 
-### OSX
+## OSX
 Install NodeJs:
 ```
 brew install node
@@ -37,7 +41,7 @@ Install Git:
 brew install git
 ```
 
-### Linux (Debian/Ubuntu)
+## Linux (Debian/Ubuntu)
 
 Install NodeJs:
 ```
