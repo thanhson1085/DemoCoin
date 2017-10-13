@@ -69,3 +69,8 @@ Saving successful migration to network...
 Saving artifacts...
 
 ```
+
+In the output above, we see the addresses of the contracts:
+
+- IcoToken Address: `0xb598a4a58dc9ae01e75b215f7028db2a926d21e4`
+- IcoContract Address: `0x781f0faf06b17ea69cb2aa2bbc9c4942ae4ab398`

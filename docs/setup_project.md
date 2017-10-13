@@ -64,5 +64,18 @@ Listening on localhost:8545
 We should save the addresses and private keys above to use for testing later
 
 ### Connecting Metamask to TestRPC
-In your Chrome Browswer, you click Metamask icon on left-top corrner.
+In your Chrome Browswer, you click Metamask icon on left-top corrner. Click the icon to open it and choose the **Localhost 8545** network
 
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/1.JPG)
+
+Click to the account icon on top-left of Metamask, choose **Import Account**
+
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/2.JPG)
+
+Copy & Paste the private key that you got from TestRPC, click **Import**
+
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/4.JPG)
+
+If success, you have 100 ETH in your account :)
+
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/5.JPG)

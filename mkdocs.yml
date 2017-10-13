@@ -5,4 +5,4 @@ pages:
     - Setup the project: setup_project.md
     - ERC20 Token: erc20_token.md
     - Deployment script: writing_deploy_script.md
-    - Run the project: run_project.md
+    - Testing the project: test_project.md
