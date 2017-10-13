@@ -61,4 +61,8 @@ Listening on localhost:8545
 
 ```
 
-We should store the addresses and private keys above to use for testing later
+We should save the addresses and private keys above to use for testing later
+
+### Connecting Metamask to TestRPC
+In your Chrome Browswer, you click Metamask icon on left-top corrner.
+

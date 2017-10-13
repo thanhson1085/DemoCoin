@@ -4,5 +4,5 @@ pages:
     - Prerequisites: prerequisites.md
     - Setup the project: setup_project.md
     - ERC20 Token: erc20_token.md
-    - Deploy script: writing_deploy_script.md
+    - Deployment script: writing_deploy_script.md
     - Run the project: run_project.md
