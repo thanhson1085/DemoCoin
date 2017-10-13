@@ -16,7 +16,7 @@ We use `truffle` to build/deploy the project. So we Install Truffle via NPM:
 npm install -g truffle
 ```
 
-### Start a Ethereum Node
+## Start a Ethereum Node
 Open a terminal and run the command to start a Ethereum node using TestRPC:
 ```
 testrpc
@@ -63,7 +63,7 @@ Listening on localhost:8545
 
 We should save the addresses and private keys above to use for testing later
 
-### Connecting Metamask to TestRPC
+## Connecting Metamask to TestRPC
 In your Chrome Browswer, you click Metamask icon on left-top corrner. Click the icon to open it and choose the **Localhost 8545** network
 
 ![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/1.JPG)
