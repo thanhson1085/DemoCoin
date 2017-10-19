@@ -2,6 +2,7 @@
 This project will show you step by step to develop a ICO Smart Contract.
 
 Before reading this tutorial, you should have:
+
 - Basic Blockchain Knowledge
 - Experience with a programing language (prefer NodeJS)
 
