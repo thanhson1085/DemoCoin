@@ -8,3 +8,4 @@ pages:
     - ERC20 Token: erc20_token.md
     - Deployment script: writing_deploy_script.md
     - Testing the project: test_project.md
+    - Deploy to Testnet: deploy_to_testnet.md

@@ -1,4 +1,4 @@
-Before starting the project, we have to prepare platforms and dependencies. In this case, we have to have NodeJs and Geth.
+Before starting the project, we have to prepare platforms and dependencies as the below.
 
 ## Prerequisites
 - MetaMask (Chrome Extension)
