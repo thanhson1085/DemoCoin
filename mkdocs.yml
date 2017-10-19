@@ -1,4 +1,6 @@
-site_name: Demo Coin
+site_name: ERC20 - Demo Coin
+site_description: Write, build, deploy, verify a ERC20 Smart Contract
+site_author: Nguyen Sy Thanh Son
 pages:
     - Introductions: index.md
     - Prerequisites: prerequisites.md
