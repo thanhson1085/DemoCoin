@@ -9,3 +9,4 @@ pages:
     - Deployment script: writing_deploy_script.md
     - Testing the project: test_project.md
     - Deploy to Testnet: deploy_to_testnet.md
+    - Verify the contract on Etherscan: verify_contract.md
