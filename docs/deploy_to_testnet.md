@@ -3,7 +3,7 @@ After finishing the smart contract in the local development environment, we shou
 There are many tools to deploy the smart contract to the testnets (you can do it with Truffle). In this tutorial, we will use two tools [Remix](https://github.com/ethereum/browser-solidity) and Metamask Wallet
 
 ## Give me Ether
-To deploy Smart Contract, we have to have Ether to pay for Gas, that is fees for the deployment.
+To deploy Smart Contract, we have to have Ether to pay for Gas, that is fees for the deployment. Following the steps below to get free ethers.
 
 Click **Metamask** on Chrome, select Testnet - Ropsten
 
@@ -89,3 +89,13 @@ Explaining as the below:
 And confirm the transaction with gasLimit `2000000`, gasPrice `21 Gwei`
 
 ![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/33.JPG)
+
+Base on the logic in the contract, we have to run `setIcoContract` function in IcoToken Class to change the value `icoContract` valiable. So we copy-paste the Token Sale Contract Address into `setIcoContract` textbox in Remix. Make a transaction to change the data in the smart contract.
+
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/34.JPG)
+
+Now, the token sale contract is ready to test. So we go to the next step.
+
+## Test the token sale contract
+
+Testing the contract in Testnet with Metamask is same with in local enviroment. So we can refer to the steps in **Test the project** page to verify the contract.
