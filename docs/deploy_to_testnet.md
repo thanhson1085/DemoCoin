@@ -3,7 +3,7 @@ After finishing the smart contract in the local development environment, we shou
 There are many tools to deploy the smart contract to the testnets (you can do it with Truffle). In this tutorial, we will use two tools [Remix](https://github.com/ethereum/browser-solidity) and Metamask Wallet
 
 ## Give me Ether
-To deploy Smart Contract, we have to have Ether to pay for Gas, that is fees for the deployment. So we go to site [Faucet Rinkeby](https://faucet.rinkeby.io/) to get 18 ETH. Now, following the steps below
+To deploy Smart Contract, we have to have Ether to pay for Gas, that is fees for the deployment.
 
 Click **Metamask** on Chrome, select Testnet - Ropsten
 
@@ -46,7 +46,7 @@ Open **Settings** tab, select the Solidity compiler version. In this tutorial, w
 
 The Smart Contract will automatically compile by Remix. Now, we move to the next step.
 
-## Deploy Smart Contract with Remix
+## Deploy ERC20 Smart Contract with Remix
 As you know, we have the two contracts need to deploy - IcoToken and IcoContract. We deploy IcoToken firstly.
 
 In **Run** tab, we select IcoToken Contract.
@@ -61,6 +61,31 @@ After clicking **Create** button, a popup Metamask window wil show in your scree
 
 ![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/30.JPG)
 
+Waiting util the transaction is done. we will see the contract addess of IcoToken Class in Remix. Click the transaction in Metamask, it will redirect to `ropsten.etherscan.io` website
 
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/31.JPG)
 
+Now, go to next step to deploy the token sale contract.
 
+## Deploy Token Sale Smart Contract with Remix
+
+As the step above, we need to input the parameters for the token sale contract. It should be:
+```
+"0xe9A94390d214b018782D26474FD9F4270CD9719D", "0xaf59cabaaab7315329a7971a16fca913b740e632", "100000000000000000000000000", "1000", "1504051200", "1514592000", "100000000000000000"
+```
+Explaining as the below:
+```
+  "0xe9A94390d214b018782D26474FD9F4270CD9719D", // Your ETH Address, you should custom it
+  "0xaf59cabaaab7315329a7971a16fca913b740e632", // ERC20 Token address, you should custom it
+  "100000000000000000000000000", // 100000000 Token
+  "1000", // 1 ETH = 1000 Token
+  "1504051200", // 30/08/2017
+  "1514592000", // 30/12/2017
+  "100000000000000000" // 0.1 ETH
+
+```
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/32.JPG)
+
+And confirm the transaction with gasLimit `2000000`, gasPrice `21 Gwei`
+
+![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/33.JPG)
