@@ -170,7 +170,6 @@ contract IcoToken is SafeMath, StandardToken, Pausable {
   string public symbol;
   uint256 public decimals;
   string public version;
-  address public icoSaleDeposit;
   address public icoContract;
 
   function IcoToken(
