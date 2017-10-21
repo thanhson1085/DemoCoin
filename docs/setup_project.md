@@ -1,5 +1,5 @@
 ## Setup the project
-As you know, Ethereum Smart Contract use Solidity programing language. So we have to intall the compiler called `Solc`.
+As you know, Ethereum Smart Contract use Solidity programing language. So we have to install the compiler called `Solc`.
 
 Open your terminal, and install Solc via NPM:
 ```
