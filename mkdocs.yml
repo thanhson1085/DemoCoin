@@ -1,6 +1,7 @@
 site_name: Demo Coin
 site_description: Write, build, deploy, verify a ERC20 Smart Contract
 site_author: Nguyen Sy Thanh Son
+google_analytics: ['UA-53196177-6', 'erc20token.sonnguyen.ws']
 pages:
     - Introductions: index.md
     - Prerequisites: prerequisites.md
