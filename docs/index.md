@@ -11,6 +11,13 @@ Before reading this tutorial, you should have:
 - Developers who heard Blockchain but never try it
 - Developers who want to write Smart Contract for ICO
 
+## Steps to develope a ICO Smart Contract
+- Step 1: Developers write ICO Smart Contract (using Solidity)
+- Step 2: Deploy to Local Ethereum Node
+- Step 3: Test the contract
+- Step 4: Deploy to Ethereum Testnet and test it
+- Step 5: Deploy to Ethereum Mainnet
+
 ## Discussions
 If you have somethings want to discuss, please join our Gitter channel
 

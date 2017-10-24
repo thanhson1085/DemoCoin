@@ -1,4 +1,6 @@
-Actually, we have many way to deploy your contract to Ethereum Blockchain. And the deployment processes are complicated.
+Actually, we have many way to deploy your contract to Ethereum Blockchain. And the deployment processes are still complicated.
+
+The smart contract that we used in this tutorial is very simple and only for education purpose. In fact, the scenario for ICO is more complicate and we need to comply the law of country where you want to sell your token.
 
 After reading this tutorial, we need to learn more to make the deploment more easily, more automatically.
 
