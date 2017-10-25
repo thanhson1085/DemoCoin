@@ -75,4 +75,4 @@ In the output above, we see the addresses of the contracts:
 - IcoToken Address: `0xb598a4a58dc9ae01e75b215f7028db2a926d21e4` => this is your ERC20 Token address
 - IcoContract Address: `0x781f0faf06b17ea69cb2aa2bbc9c4942ae4ab398` => this is your token sale contract address. Invertors will send ETH to this address to get the ICO Tokens
 
-***Note: please save the addressed above to use for the next steps***
+***Note: please save the addresses above to use for the next steps***

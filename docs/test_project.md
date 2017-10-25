@@ -1,5 +1,6 @@
 Now, it is time to manually test your ICO Smart Contract.
 The scenario of testing as the below:
+
 - Send 1 ETH from your wallet to IcoContract Address
 - Receive the Token in your wallet
 
