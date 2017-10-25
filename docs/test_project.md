@@ -5,12 +5,14 @@ The scenario of testing as the below:
 
 ## Sending a transaction
 
-Open your Metamask, click **Send** button. Paste the address of IcoContact to **Recipient Address** textbox, and type **1** to **Amount** box. Click **Next**
+Open your Metamask, click **Send** button. Paste the address of **IcoContact*** to **Recipient Address** textbox, and type **1** to **Amount** box. Click **Next**
 
 ![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/6.JPG)
 
+***Note: the address in the image above is not same with your address, please use your IcoContract address that you got from your deployment step***
 
-Input **Gas limit** = 2000000, **Gas Price** = 221 Gwei. Click **Submit**
+
+Enter **Gas limit** = 2000000, **Gas Price** = 221 Gwei. Click **Submit**
 
 ![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/7.JPG)
 
