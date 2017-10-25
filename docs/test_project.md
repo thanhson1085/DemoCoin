@@ -13,7 +13,7 @@ Open your Metamask, click **Send** button. Paste the address of **IcoContact*** 
 ***Note: the address in the image above is not same with your address, please use your IcoContract address that you got from your deployment step***
 
 
-Enter **Gas limit** = 2000000, **Gas Price** = 221 Gwei. Click **Submit**
+Enter **Gas limit** = 200.000, **Gas Price** = 21 Gwei. Click **Submit**
 
 ![](https://raw.githubusercontent.com/thanhson1085/DemoCoin/master/images/7.JPG)
 
