@@ -1,28 +1,38 @@
 ## ERC20 ICO Smart Contract
-In this project, we use Truffle to compile and deploy smart contract, so to start writing Smart Contract, we have to init the project with Truffle:
+
+In this project, we use Truffle to compile and deploy smart contract, so to start writing Smart Contract, we have to init the project with Truffle.
+
+At the first, we create the new directory for the project:
+```
+mkdir mycoin && cd mycoin
+```
+After that, init the base project:
 ```
 truffle init
 ```
 Truffle will create some files and directories as the below:
 ```
+$ tree -L 2
 .
 ├── contracts
-│   ├── Metacoin.sol
+│   ├── ConvertLib.sol
+│   ├── MetaCoin.sol
 │   └── Migrations.sol
 ├── migrations
 │   ├── 1_initial_migration.js
 │   └── 2_deploy_contracts.js
-├── package.json
-├── README.md
 ├── test
-│   ├── metacoin.js
-│   └── TestMetacoin.sol
+│   ├── TestMetacoin.sol
+│   └── metacoin.js
 └── truffle.js
 
 ```
 
-Now, it is ready to write your own smart contract. We can remove the sample file `Metacoin.sol` and create a new `.sol` (IcoContract.sol) file in `contracts` directory. After that, you copy source code from [this link](https://github.com/thanhson1085/DemoCoin/blob/master/contracts/IcoContract.sol), and paste to your new contract file.
+Now, it is ready to write your own smart contract. We can remove the sample files `Metacoin.sol`, `ConvertLib.sol` and create a new `.sol` (IcoContract.sol) file in `contracts` directory. After that, you copy source code from [this link](https://github.com/thanhson1085/DemoCoin/blob/master/contracts/IcoContract.sol), and paste to your new contract file.
 
+Now, I just want to explain some main points in the contract source code
+
+## Explaining the contract source code
 In the contract, there are some main points need to explain as the below:
 
 For ICO, we should create a ERC20 Token. The below is an example for Standard ERC20 Token:
@@ -250,5 +260,3 @@ contract IcoContract is SafeMath, Pausable {
 ```
 
 Inverstor will tranfer ETH to this contract address to buy the token. So we can see a fallback function `payable`. This function will be called once the contract receive Ether.
-
-
