@@ -19,7 +19,12 @@ Before reading this tutorial, you should have:
 - Step 5: Deploy to Ethereum Mainnet
 
 ## Discussions
-If you have somethings want to discuss, please join our Gitter channel
+If you have somethings want to discuss, please connect Gitter channel, join Facebook Group
 
 [![Join the chat at https://gitter.im/DemoIcoToken/Lobby](https://badges.gitter.im/DemoIcoToken/Lobby.svg)](https://gitter.im/DemoIcoToken/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+[Vietnam Blockchain Developers](https://www.facebook.com/groups/1561844270543595/)
+
+
 
