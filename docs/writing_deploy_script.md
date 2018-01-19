@@ -35,7 +35,7 @@ module.exports = function(deployer) {
 
 ```
 
-Note: you should change parameter `Your ETH Address`
+Note: you should change parameter `Your ETH Address`, and `endtime` ('1514592000', // 30/12/2017)
 
 ## Deploy the contracts
 After that, return root directory and  run the deploy command from the terminal
