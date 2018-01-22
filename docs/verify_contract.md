@@ -1,6 +1,6 @@
 This is final step to verify and publish your contract in Etherscan. This will help Etherscan to display your ERC20 Token correctly.
 
-Go to Etherscan Ropsten Testnet: https://ropsten.etherscan.io
+Go to Etherscan Ropsten Testnet: [https://ropsten.etherscan.io](https://ropsten.etherscan.io)
 
 Search your token by token address.
 
